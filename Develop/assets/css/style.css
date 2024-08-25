@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* brand color palette */
@@ -53,6 +54,15 @@ header h1 {
   line-height: 1;
 }
 
+header h1::before {
+  background-image: url("../images/hobbes_avatar.jpg");
+  display: inline-block;
+  background-size: 50px 60px;
+  width: 50px;
+  height: 60px;
+  content: "";
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -84,6 +94,9 @@ nav a:last-child {
 main {
   margin-top: 20px;
   margin-bottom: 45px;
+}
+
+section:target {
 }
 
 .hero-banner {
@@ -188,6 +201,10 @@ main {
 }
 
 .flex-item h3 {
+  color: var(--tertiary);
+  background-color: var(--secondary);
+  padding: 5px 1% 5px 1%;
+  margin: 0;
   font-size: 1.6rem;
 }
 
@@ -222,23 +239,23 @@ main {
 /* portfolio project images */
 /* TODO: Add portfolio project images here using background images*/
 .run-buddy {
-  
+  background-image: url("../images/run-buddy.jpg");
 }
 
 .led-wall {
-  
+  background-image: url("../images/led-wall.jpg");
 }
 
 .react-calc {
-  
+  background-image: url("../images/react-calc.jpg");
 }
 
 .pastel-puzzles {
-  
+  background-image: url("../images/pastel-puzzles.jpg");
 }
 
 .surf-report {
-  
+  background-image: url("../images/surf-report.jpg");
 }
 
 /* media queries */
@@ -278,3 +295,9 @@ main {
 }
 
 /* TODO: add media query for a max-width of 768px */
+@media screen and (max-width: 768px) {
+    .flex-item:first-child {
+      min-height: 150px;
+      flex-basis: 100%;
+  }
+}
